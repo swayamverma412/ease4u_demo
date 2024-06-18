@@ -32,10 +32,14 @@ const ThemeRoutes = [
       { path: "/forms", exact: true, element: <Forms /> },
     ],
   },
+  {path: "/",
+   children: [
   { path: "/", element: <Navigate to="/home" /> },
   { path: "/home", exact: true, element: <Home /> },
   { path: "/login", exact: true, element: <Login /> },
   { path: "/Contact", exact: true, element: <Contactus /> },
+   ],
+  },
 ];
 
 export default ThemeRoutes;
