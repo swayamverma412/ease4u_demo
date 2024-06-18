@@ -24,7 +24,6 @@ const ThemeRoutes = [
     path: "/",
     element: <FullLayout />,
     children: [
-      { path: "/", element: <Navigate to="/home" /> },
       { path: "/starter", exact: true, element: <Starter /> },
       { path: "/monthly", exact: true, element: <Monthly /> },
       { path: "/Contactus", exact: true, element: <Contact/> },
@@ -34,7 +33,7 @@ const ThemeRoutes = [
       { path: "/forms", exact: true, element: <Forms /> },
     ],
   },
-  
+  { path: "/", element: <Navigate to="/home" /> },
   { path: "/home", exact: true, element: <Home /> },
   { path: "/login", exact: true, element: <Login /> },
   { path: "/Contact", exact: true, element: <Contactus /> },
