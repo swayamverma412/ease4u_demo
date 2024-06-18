@@ -4,10 +4,7 @@ import tw from "twin.macro";
 import { SectionHeading, Subheading as SubheadingBase } from "../misc/Headings.js";
 import { SectionDescription } from "../misc/Typography.js";
 import { Container, ContentWithPaddingXl } from "../misc/Layouts.js";
-import { ReactComponent as ArrowRightIcon } from "../../images/arrow-right-icon.svg";
-import SupportIconImage from "../../images/support-icon.svg";
-import ShieldIconImage from "../../images/shield-icon.svg";
-import CustomizeIconImage from "../../images/customize-icon.svg";
+import { FaShieldAlt, FaTools, FaClock } from 'react-icons/fa'; // Importing icons from react-icons
 
 const Heading = tw(SectionHeading)``;
 const Subheading = tw(SubheadingBase)`text-center mb-3`;
@@ -21,9 +18,10 @@ const Column = styled.div`
 
 const Card = styled.a`
   ${tw`flex flex-col items-center text-center h-full mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 `}
-  .imageContainer {
+  
+  .iconContainer {
     ${tw`text-center rounded-full p-4 bg-gray-100`}
-    img {
+    svg {
       ${tw`w-8 h-8`}
     }
   }
@@ -47,34 +45,34 @@ const Card = styled.a`
 export default ({
   cards = [
     {
-      imageSrc: ShieldIconImage,
+      icon: <FaShieldAlt />,
       title: "Reduce Your Supplier Count",
-      description: "We manage the suppliers on your behalf – searching, on-boarding, interacting and auditing. Even your existing suppliers can be added to our pool",
+      description: "We handle your suppliers – from searching and on-boarding to interacting and auditing. Your existing suppliers can also join our network.",
       url: ""
     },
     {
-      imageSrc: SupportIconImage,
+      icon: <FaTools />,
       title: "Multiple Categories on Single Platform",
-      description: "We cover large number of product and service categories as well as wide  geographical area",
+      description: "We cover a wide range of product and service categories across various geographical areas on a unified platform.",
       url: ""
     },
     {
-      imageSrc: CustomizeIconImage,
-      title: "Save time and increase productivity",
-      description: "We manage services end-to-end so that your team can save time and increase their productivity",
+      icon: <FaClock />,
+      title: "Save Time and Increase Productivity",
+      description: "We manage services comprehensively so your team can save time and boost productivity effectively.",
       url: ""
     }
   ],
   linkText = "Learn More",
-  heading = "How we help solve them",
-  subheading = "with our Managed & Exclusive Source-to-Pay Platform",
+  heading = "How We Address These Challenges",
+  subheading = "with Our Managed & Exclusive Source-to-Pay Platform",
   description = "",
-  imageContainerCss = null,
-  imageCss = null
+  iconContainerCss = null,
+  iconCss = null
 }) => {
   /*
    * This component accepts a prop - `cards` which is an array of objects denoting the cards. Each object in the `cards` array can have the following keys:
-   *  1) imageSrc - the image shown at the top of the card
+   *  1) icon - the icon component shown at the top of the card
    *  2) title - the title of the card
    *  3) description - the description of the card
    *  4) url - the URL that the card should go to on click
@@ -89,17 +87,12 @@ export default ({
           {cards.map((card, i) => (
             <Column key={i}>
               <Card href={card.url}>
-                <span className="imageContainer" css={imageContainerCss}>
-                  <img src={card.imageSrc} alt="" css={imageCss} />
+                <span className="iconContainer" css={iconContainerCss}>
+                  {card.icon}
                 </span>
                 <span className="title">{card.title}</span>
                 <p className="description">{card.description}</p>
-                {linkText && (
-                  <span className="link">
-                    <span>{linkText}</span>
-                    <ArrowRightIcon className="icon" />
-                  </span>
-                )}
+        
               </Card>
             </Column>
           ))}

@@ -1,20 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-//eslint-disable-next-line
-import { css } from "styled-components/macro";
-import { SectionHeading } from "../misc/Headings.js";
+import { FaTruck, FaGift, FaFileSignature, FaCalendarAlt, FaUsers } from 'react-icons/fa'; // Importing icons from react-icons
 
-import defaultCardImage from "../../images/shield-icon.svg";
-
+import { SectionHeading, Subheading } from "../misc/Headings.js";
 import { ReactComponent as SvgDecoratorBlob3 } from "../../images/svg-decorator-blob-3.svg";
-
-import SupportIconImage from "../../images/support-icon.svg";
-import ShieldIconImage from "../../images/shield-icon.svg";
-import CustomizeIconImage from "../../images/customize-icon.svg";
-import FastIconImage from "../../images/fast-icon.svg";
-import ReliableIconImage from "../../images/reliable-icon.svg";
-import SimpleIconImage from "../../images/simple-icon.svg";
 
 const Container = tw.div`relative`;
 
@@ -29,9 +19,9 @@ const Column = styled.div`
 
 const Card = styled.div`
   ${tw`flex flex-col mx-auto max-w-xs items-center px-6 py-10 border-2 border-dashed border-primary-500 rounded-lg mt-4`}
-  .imageContainer {
+  .iconContainer {
     ${tw`border-2 border-primary-500 text-center rounded-full p-6 flex-shrink-0 relative`}
-    img {
+    svg {
       ${tw`w-8 h-8`}
     }
   }
@@ -49,31 +39,32 @@ const Card = styled.div`
   }
 `;
 
-
 export default () => {
-  /*
-   * This componets has an array of object denoting the cards defined below. Each object in the cards array can have the key (Change it according to your need, you can also add more objects to have more cards in this feature component):
-   *  1) imageSrc - the image shown at the top of the card
-   *  2) title - the title of the card
-   *  3) description - the description of the card
-   *  If a key for a particular card is not provided, a default value is used
-   */
-
   const cards = [
     {
-      imageSrc: ShieldIconImage,
+      icon: <FaTruck />,
       title: "Logistics Management",
-      description: "Anything you want to move through courier , Air cargo or PTL"
+      description: "Anything you want to move through courier, Air cargo or PTL"
     },
-    { imageSrc: SupportIconImage, title: "Corporate Gifting", 
-      description: "Customized Gifts for delihting on every ocassion"
+    {
+      icon: <FaGift />,
+      title: "Corporate Gifting",
+      description: "Customized Gifts for delighting on every occasion"
     },
-    { imageSrc: CustomizeIconImage, title: "Officie Supplies and Printing" ,      description: "Everything for a Productive day at work"},
-    { imageSrc: ReliableIconImage, title: "Event Management" ,       description: "End-to-End management of small and big events"
+    {
+      icon: <FaFileSignature />,
+      title: "Stamp Paper Procurement",
+      description: "Procuring Stamp Paper"
     },
-    { imageSrc: FastIconImage, title: "Conferences and Trainings" ,      description: "End-to-End management of meets"
+    {
+      icon: <FaCalendarAlt />,
+      title: "Event Management",
+      description: "End-to-End management of small and big events"
     },
-    { imageSrc: SimpleIconImage, title: "Employee Management",      description: "Innovative activites for engaged employees"
+    {
+      icon: <FaUsers />,
+      title: "Conferences and Trainings",
+      description: "End-to-End management of meets"
     }
   ];
 
@@ -83,8 +74,8 @@ export default () => {
         {cards.map((card, i) => (
           <Column key={i}>
             <Card>
-              <span className="imageContainer">
-                <img src={card.imageSrc || defaultCardImage} alt="" />
+              <span className="iconContainer">
+                {card.icon}
               </span>
               <span className="textContainer">
                 <span className="title">{card.title || "Fully Secure"}</span>

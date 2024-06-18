@@ -1,39 +1,51 @@
-import { Row, Col, Card, CardBody, CardTitle, Button } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
 
 const About = () => {
   return (
-    <Row>
-      <Col>
+    <Row className="justify-content-center">
+      <Col lg="8">
         {/* --------------------------------------------------------------------------------*/}
-        {/* Card-1*/}
+        {/* Card-1: Best Packing Practices */}
         {/* --------------------------------------------------------------------------------*/}
-        <Card>
-          <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            <i className="bi bi-bell me-2"> </i>
-            About Material Pro React
+        <Card className="mb-4">
+          <CardTitle tag="h6" className="border-bottom p-3 mb-0 text-center">
+            <i className="bi bi-box-seam me-2"> </i>
+            Best Packing Practices
           </CardTitle>
-          <CardBody className="p-4">
-            <Row >
-              <Col lg="8">
-                <h2 className="mt-4">Material React Admin Pro Version</h2>
-                <h5 className=" mb-4">
-                  5 premium and highly customizable demo variations included in
-                  the package, with React Router 6, Redux Toolkit, Axios nd much
-                  more...
-                </h5>
-                <img
-                  src="https://demos.wrappixel.com/free-admin-templates/angular/landingpage-styles/assets/images/screenshots/materialpro-react-pro-lp-img.jpg"
-                  alt="my"
-                />
-                <br />
-                <Button
-                  className="mt-3"
-                  color="primary"
-                  href="https://wrappixel.com/templates/materialpro-react-admin/?ref=33"
-                  target="_blank"
-                >
-                  Check Pro Version
-                </Button>
+          <CardBody className="p-4 text-center">
+            <Row>
+              <Col>
+                <div className="embed-responsive embed-responsive-16by9">
+                  <iframe
+                    className="embed-responsive-item"
+                    src="https://www.youtube.com/embed/your_video_id" // Replace with actual video ID
+                    allowFullScreen
+                    title="Best Packing Practices"
+                  ></iframe>
+                </div>
+              </Col>
+            </Row>
+          </CardBody>
+        </Card>
+        {/* --------------------------------------------------------------------------------*/}
+        {/* Card-2: How to Measure */}
+        {/* --------------------------------------------------------------------------------*/}
+        <Card className="mb-4">
+          <CardTitle tag="h6" className="border-bottom p-3 mb-0 text-center">
+            <i className="bi bi-ruler me-2"> </i>
+            How to Measure
+          </CardTitle>
+          <CardBody className="p-4 text-center">
+            <Row>
+              <Col>
+                <div className="embed-responsive embed-responsive-16by9">
+                  <iframe
+                    className="embed-responsive-item"
+                    src="https://www.youtube.com/embed/another_video_id" // Replace with actual video ID
+                    allowFullScreen
+                    title="How to Measure"
+                  ></iframe>
+                </div>
               </Col>
             </Row>
           </CardBody>

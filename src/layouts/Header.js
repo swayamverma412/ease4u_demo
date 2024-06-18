@@ -19,61 +19,53 @@ import user1 from "../assets/images/users/user4.jpg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
     setIsOpen(!isOpen);
   };
+
   const showMobilemenu = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
+
   return (
-    <Navbar color="primary" dark expand="md" className="fix-header">
+    <Navbar color="white" dark expand="md" className="fix-header">
       <div className="d-flex align-items-center">
         <div className="d-lg-block d-none me-5 pe-3">
           <Logo />
         </div>
         <NavbarBrand href="/">
-          <LogoWhite className=" d-lg-none" />
+          <LogoWhite className="d-lg-none" />
         </NavbarBrand>
         <Button
           color="primary"
-          className=" d-lg-none"
+          className="d-lg-none"
           onClick={() => showMobilemenu()}
         >
           <i className="bi bi-list"></i>
         </Button>
       </div>
-      <div className="hstack gap-2">
-        <Button
-          color="primary"
-          size="sm"
-          className="d-sm-block d-md-none"
-          onClick={Handletoggle}
-        >
-          {isOpen ? (
-            <i className="bi bi-x"></i>
-          ) : (
-            <i className="bi bi-three-dots-vertical"></i>
-          )}
-        </Button>
+
+      {/* Centered Customer Information Center */}
+      <div className="text-center flex-grow-1 text-bold">
+        <span className="fs-5">Customer Information Center</span>
       </div>
 
+      {/* Right-aligned dropdown and logout button */}
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
-
-            
+          {/* Add your NavItems here if needed */}
         </Nav>
-        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+        <Dropdown isOpen={dropdownOpen} toggle={toggle} className="ms-auto">
           <DropdownToggle color="transparent">
             <img
               src={user1}
               alt="profile"
               className="rounded-circle"
               width="30"
-            ></img>
+            />
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Info</DropdownItem>

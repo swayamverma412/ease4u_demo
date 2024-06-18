@@ -3,6 +3,7 @@
 }
 .contentArea {
   flex-grow: 1;
+  background: linear-gradient(to right, #068BC9, #3BA3D4);
   max-width: 1300px;
   margin: 0 auto;
 }
@@ -12,6 +13,7 @@
 }
 a {
   text-decoration: none;
+
 }
 
 
@@ -34,6 +36,7 @@ a {
 table th {
   font-weight: 500;
 }
+
 
 
 .table>:not(:first-child) {

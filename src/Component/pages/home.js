@@ -6,10 +6,10 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import Hero from '../hero/BackgroundAsImage.js'
 import About from '../features/ThreeColCenteredStatsPrimaryBackground'
 import Services from "../features/DashedBorderSixFeatures";
-import CTA from  "../features/ThreeColCenteredStatsPrimaryBackground"
+import CTA from  "../features/cta.js"
 import Solve from "../features/ThreeColSimple"
 import Challenge from "../features/ThreeColWithSideImageWithPrimaryBackground"
-import Benefit from "../features/ThreeColWithSideImageWithPrimaryBackground"
+import Benefit from "../features/benefits.js"
 import Footer from "../footers/FiveColumnWithInputForm"
 import Works from "../features/VerticalWithAlternateImageAndText"
 
@@ -24,7 +24,6 @@ export default () => {
       <Challenge/>
       <Solve/>
       <Benefit/>
-      <Works/>
       <CTA/>
       <Footer/>
       

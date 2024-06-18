@@ -6,7 +6,7 @@ import { Container as ContainerBase, ContentWithPaddingXl } from "../misc/Layout
 import { SectionDescription } from "../misc/Typography";
 
 // Adjust Container styles to remove top margin
-const Container = tw(ContainerBase)`mt-0 lg:my-0 bg-primary-500 text-gray-100 -mx-8 px-8`;
+const Container = tw(ContainerBase)`mt-0 lg:my-0 bg-primary-500 text-gray-100 -mx-8 px-8 `;
 
 const HeadingContainer = tw.div``;
 const Heading = tw(SectionHeading)`sm:text-3xl md:text-4xl lg:text-5xl`;
