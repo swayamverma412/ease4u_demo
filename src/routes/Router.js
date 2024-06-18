@@ -21,7 +21,6 @@ const Login = lazy(() => import("../Component/pages/Login.js"));
 /***** Routes *****/
 const ThemeRoutes = [
   {
-    path: "/",
     element: <FullLayout />,
     children: [
       { path: "/starter", exact: true, element: <Starter /> },
